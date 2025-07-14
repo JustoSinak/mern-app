@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { body, param, query, validationResult } from 'express-validator';
 import { AppError } from './errorHandler';
-import { PasswordService } from '@/utils/password';
+import { PasswordService } from '../utils/password';
 
 /**
  * Handle validation errors
@@ -202,6 +202,52 @@ export const validateUser = {
       .isIn(['en', 'es', 'fr', 'de', 'it'])
       .withMessage('Invalid language'),
     body('preferences.theme')
+      .optional()
+      .isIn(['light', 'dark', 'auto'])
+      .withMessage('Invalid theme'),
+    handleValidationErrors
+  ],
+
+  changePassword: [
+    body('currentPassword')
+      .notEmpty()
+      .withMessage('Current password is required'),
+    body('newPassword')
+      .isLength({ min: 6, max: 128 })
+      .withMessage('New password must be between 6 and 128 characters')
+      .custom((value) => {
+        try {
+          PasswordService.validatePassword(value);
+          return true;
+        } catch (error) {
+          throw new Error((error as Error).message);
+        }
+      }),
+    handleValidationErrors
+  ],
+
+  preferences: [
+    body('newsletter')
+      .optional()
+      .isBoolean()
+      .withMessage('Newsletter preference must be a boolean'),
+    body('smsNotifications')
+      .optional()
+      .isBoolean()
+      .withMessage('SMS notifications preference must be a boolean'),
+    body('emailNotifications')
+      .optional()
+      .isBoolean()
+      .withMessage('Email notifications preference must be a boolean'),
+    body('currency')
+      .optional()
+      .isIn(['USD', 'EUR', 'GBP', 'CAD', 'AUD', 'JPY', 'CHF', 'CNY'])
+      .withMessage('Invalid currency'),
+    body('language')
+      .optional()
+      .isIn(['en', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'ja', 'ko', 'zh'])
+      .withMessage('Invalid language'),
+    body('theme')
       .optional()
       .isIn(['light', 'dark', 'auto'])
       .withMessage('Invalid theme'),

@@ -1,8 +1,8 @@
-import { Cart, Product } from '@/models';
-import { AppError } from '@/middleware/errorHandler';
-import { logger } from '@/utils/logger';
+import { Cart, Product } from '../models';
+import { AppError } from '../middleware/errorHandler';
+import { logger } from '../utils/logger';
 import { Types } from 'mongoose';
-import { IAddToCartRequest } from '@/types/order';
+import { IAddToCartRequest } from '../types/order';
 
 export class CartService {
   /**

@@ -1,6 +1,6 @@
 import * as jwt from 'jsonwebtoken';
 import crypto from 'crypto';
-import { IJwtPayload, IRefreshTokenPayload } from '@/types/common';
+import { IJwtPayload, IRefreshTokenPayload } from '../types/common';
 import { logger } from './logger';
 
 export class JWTService {

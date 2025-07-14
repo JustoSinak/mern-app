@@ -1,7 +1,7 @@
 import express from 'express';
-import { cartController } from '@/controllers/cartController';
-import { auth } from '@/middleware/auth';
-import { validateCart } from '@/middleware/validation';
+import { cartController } from '../controllers/cartController';
+import { auth } from '../middleware/auth';
+import { validateCart } from '../middleware/validation';
 
 const router = express.Router();
 

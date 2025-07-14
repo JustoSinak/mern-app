@@ -1,6 +1,6 @@
 import mongoose, { Schema, Model } from 'mongoose';
-import { IOrder, IOrderMethods, OrderModel, IOrderItem, IShippingMethod, IPaymentDetails, IOrderTracking } from '@/types/order';
-import { IAddress } from '@/types/user';
+import { IOrder, IOrderMethods, OrderModel, IOrderItem, IShippingMethod, IPaymentDetails, IOrderTracking } from '../types/order';
+import { IAddress } from '../types/user';
 
 // Address schema (reused from User model)
 const addressSchema = new Schema<IAddress>({

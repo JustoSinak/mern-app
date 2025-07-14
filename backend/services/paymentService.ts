@@ -1,7 +1,7 @@
 import Stripe from 'stripe';
-import { Order } from '@/models';
-import { AppError } from '@/middleware/errorHandler';
-import { logger } from '@/utils/logger';
+import { Order } from '../models';
+import { AppError } from '../middleware/errorHandler';
+import { logger } from '../utils/logger';
 
 export class PaymentService {
   private static stripe: Stripe;

@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
-import { asyncHandler } from '@/middleware/errorHandler';
-import { PaymentService } from '@/services/paymentService';
-import { OrderService } from '@/services/orderService';
-import { AuthenticatedRequest } from '@/types/common';
-import { logger } from '@/utils/logger';
+import { asyncHandler } from '../middleware/errorHandler';
+import { PaymentService } from '../services/paymentService';
+import { OrderService } from '../services/orderService';
+import { AuthenticatedRequest } from '../types/common';
+import { logger } from '../utils/logger';
 
 export const paymentController = {
   /**

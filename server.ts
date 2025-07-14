@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import app from './backend/app';
+import { app } from './backend/app';
 import { connectDB } from './backend/config/database';
 import { logger } from './backend/utils/logger';
 

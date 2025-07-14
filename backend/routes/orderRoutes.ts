@@ -1,7 +1,7 @@
 import express from 'express';
-import { orderController } from '@/controllers/orderController';
-import { auth, adminAuth } from '@/middleware/auth';
-import { validateOrder } from '@/middleware/validation';
+import { orderController } from '../controllers/orderController';
+import { auth, adminAuth } from '../middleware/auth';
+import { validateOrder } from '../middleware/validation';
 
 const router = express.Router();
 

@@ -1,5 +1,5 @@
 import mongoose, { Schema, Model } from 'mongoose';
-import { ICart, ICartMethods, CartModel, ICartItem } from '@/types/order';
+import { ICart, ICartMethods, CartModel, ICartItem } from '../types/order';
 import Product from './Product';
 
 // Cart item subdocument schema

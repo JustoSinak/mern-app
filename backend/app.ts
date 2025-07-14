@@ -10,22 +10,23 @@ import { Server as SocketIOServer } from 'socket.io';
 import dotenv from 'dotenv';
 
 // Import middleware
-import { errorHandler } from '@/middleware/errorHandler';
-import { notFound } from '@/middleware/notFound';
+import { errorHandler } from './middleware/errorHandler';
+import { notFound } from './middleware/notFound';
 
 // Import routes
-import authRoutes from '@/routes/authRoutes';
-import userRoutes from '@/routes/userRoutes';
-import productRoutes from '@/routes/productRoutes';
-import orderRoutes from '@/routes/orderRoutes';
-import cartRoutes from '@/routes/cartRoutes';
-import paymentRoutes from '@/routes/paymentRoutes';
+import authRoutes from './routes/authRoutes';
+import userRoutes from './routes/userRoutes';
+import productRoutes from './routes/productRoutes';
+import orderRoutes from './routes/orderRoutes';
+import cartRoutes from './routes/cartRoutes';
+import paymentRoutes from './routes/paymentRoutes';
+import adminRoutes from './routes/adminRoutes';
 
 // Import database connection
-import { connectDB } from '@/config/database';
+import { connectDB } from './config/database';
 
 // Import socket handlers
-import { setupSocketHandlers } from '@/services/socketService';
+import { setupSocketHandlers } from './services/socketService';
 
 // Load environment variables
 dotenv.config();
@@ -110,6 +111,7 @@ app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/payments', paymentRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Setup Socket.IO handlers
 setupSocketHandlers(io);

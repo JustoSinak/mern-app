@@ -1,8 +1,8 @@
 import express from 'express';
-import { paymentController } from '@/controllers/paymentController';
-import { auth, adminAuth } from '@/middleware/auth';
+import { paymentController } from '../controllers/paymentController';
+import { auth, adminAuth } from '../middleware/auth';
 import { body, param } from 'express-validator';
-import { handleValidationErrors } from '@/middleware/validation';
+import { handleValidationErrors } from '../middleware/validation';
 
 const router = express.Router();
 

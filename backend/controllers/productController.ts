@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
-import { asyncHandler } from '@/middleware/errorHandler';
-import { ProductService } from '@/services/productService';
-import { AuthenticatedRequest } from '@/types/common';
-import { ICreateProductRequest, IUpdateProductRequest, IProductSearchQuery, IAddReviewRequest } from '@/types/product';
-import { logger } from '@/utils/logger';
+import { asyncHandler } from '../middleware/errorHandler';
+import { ProductService } from '../services/productService';
+import { AuthenticatedRequest } from '../types/common';
+import { ICreateProductRequest, IUpdateProductRequest, IProductSearchQuery, IAddReviewRequest } from '../types/product';
+import { logger } from '../utils/logger';
 
 export const productController = {
   /**

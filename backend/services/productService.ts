@@ -1,7 +1,7 @@
-import { Product, Category } from '@/models';
-import { AppError } from '@/middleware/errorHandler';
-import { logger } from '@/utils/logger';
-import { ICreateProductRequest, IUpdateProductRequest, IProductSearchQuery, IAddReviewRequest } from '@/types/product';
+import { Product, Category } from '../models';
+import { AppError } from '../middleware/errorHandler';
+import { logger } from '../utils/logger';
+import { ICreateProductRequest, IUpdateProductRequest, IProductSearchQuery, IAddReviewRequest } from '../types/product';
 import { Types } from 'mongoose';
 
 export class ProductService {

@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
-import { asyncHandler } from '@/middleware/errorHandler';
-import { OrderService } from '@/services/orderService';
-import { AuthenticatedRequest } from '@/types/common';
-import { ICreateOrderRequest } from '@/types/order';
+import { asyncHandler } from '../middleware/errorHandler';
+import { OrderService } from '../services/orderService';
+import { AuthenticatedRequest } from '../types/common';
+import { ICreateOrderRequest } from '../types/order';
 
 export const orderController = {
   /**

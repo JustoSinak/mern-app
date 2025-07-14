@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
-import { asyncHandler } from '@/middleware/errorHandler';
-import { CartService } from '@/services/cartService';
-import { AuthenticatedRequest } from '@/types/common';
-import { IAddToCartRequest } from '@/types/order';
+import { asyncHandler } from '../middleware/errorHandler';
+import { CartService } from '../services/cartService';
+import { AuthenticatedRequest } from '../types/common';
+import { IAddToCartRequest } from '../types/order';
 
 export const cartController = {
   /**

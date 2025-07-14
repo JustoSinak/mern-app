@@ -94,9 +94,17 @@ const Header: React.FC = () => {
                   >
                     Orders
                   </Link>
+                  {(user?.role === 'admin' || user?.role === 'moderator') && (
+                    <Link
+                      to="/admin"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 border-t border-gray-100"
+                    >
+                      Admin Panel
+                    </Link>
+                  )}
                   <button
                     onClick={handleLogout}
-                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 border-t border-gray-100"
                   >
                     Logout
                   </button>
@@ -191,12 +199,21 @@ const Header: React.FC = () => {
                   >
                     Orders
                   </Link>
+                  {(user?.role === 'admin' || user?.role === 'moderator') && (
+                    <Link
+                      to="/admin"
+                      className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 border-t border-gray-100"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Admin Panel
+                    </Link>
+                  )}
                   <button
                     onClick={() => {
                       handleLogout();
                       setIsMenuOpen(false);
                     }}
-                    className="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600"
+                    className="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 border-t border-gray-100"
                   >
                     Logout
                   </button>

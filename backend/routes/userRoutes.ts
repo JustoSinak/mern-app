@@ -1,7 +1,7 @@
 import express from 'express';
-import { userController } from '@/controllers/userController';
-import { auth } from '@/middleware/auth';
-import { validateUser } from '@/middleware/validation';
+import { userController } from '../controllers/userController';
+import { auth } from '../middleware/auth';
+import { validateUser } from '../middleware/validation';
 
 const router = express.Router();
 
@@ -59,5 +59,20 @@ router.put('/addresses/:addressId', auth, validateUser.address, userController.u
 // @desc    Delete address
 // @access  Private
 router.delete('/addresses/:addressId', auth, userController.deleteAddress);
+
+// @route   POST /api/users/change-password
+// @desc    Change user password
+// @access  Private
+router.post('/change-password', auth, validateUser.changePassword, userController.changePassword);
+
+// @route   PUT /api/users/preferences
+// @desc    Update user preferences
+// @access  Private
+router.put('/preferences', auth, validateUser.preferences, userController.updatePreferences);
+
+// @route   GET /api/users/activity
+// @desc    Get user activity summary
+// @access  Private
+router.get('/activity', auth, userController.getUserActivity);
 
 export default router;

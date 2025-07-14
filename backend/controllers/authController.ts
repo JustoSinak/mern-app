@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction } from 'express';
-import { asyncHandler } from '@/middleware/errorHandler';
-import { AuthService } from '@/services/authService';
-import { EmailService } from '@/services/emailService';
-import { JWTService } from '@/utils/jwt';
-import { AuthenticatedRequest } from '@/types/common';
-import { IRegisterRequest, ILoginRequest } from '@/types/user';
-import { logger } from '@/utils/logger';
+import { asyncHandler } from '../middleware/errorHandler';
+import { AuthService } from '../services/authService';
+import { EmailService } from '../services/emailService';
+import { JWTService } from '../utils/jwt';
+import { AuthenticatedRequest } from '../types/common';
+import { IRegisterRequest, ILoginRequest } from '../types/user';
+import { logger } from '../utils/logger';
 
 export const authController = {
   /**

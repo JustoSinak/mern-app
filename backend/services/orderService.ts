@@ -1,9 +1,9 @@
-import { Order, Cart, Product } from '@/models';
+import { Order, Cart, Product } from '../models';
 import { CartService } from './cartService';
-import { AppError } from '@/middleware/errorHandler';
-import { logger } from '@/utils/logger';
+import { AppError } from '../middleware/errorHandler';
+import { logger } from '../utils/logger';
 import { Types } from 'mongoose';
-import { ICreateOrderRequest, IOrderTracking } from '@/types/order';
+import { ICreateOrderRequest, IOrderTracking } from '../types/order';
 
 export class OrderService {
   /**

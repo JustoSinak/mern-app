@@ -1,7 +1,7 @@
 import mongoose, { Schema, Model } from 'mongoose';
 import bcrypt from 'bcryptjs';
 import crypto from 'crypto';
-import { IUser, IUserMethods, UserModel, IAddress, IRefreshToken } from '@/types/user';
+import { IUser, IUserMethods, UserModel, IAddress, IRefreshToken } from '../types/user';
 
 // Address subdocument schema
 const addressSchema = new Schema<IAddress>({

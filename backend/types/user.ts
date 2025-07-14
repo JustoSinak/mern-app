@@ -84,6 +84,61 @@ export interface IUserMethods {
   resetLoginAttempts(): Promise<void>;
 }
 
+// Admin-specific interfaces
+export interface IUserSearchQuery {
+  page?: number;
+  limit?: number;
+  search?: string;
+  role?: 'user' | 'admin' | 'moderator';
+  isActive?: boolean;
+  isEmailVerified?: boolean;
+  sortBy?: 'createdAt' | 'lastLogin' | 'firstName' | 'email';
+  sortOrder?: 'asc' | 'desc';
+  dateFrom?: string;
+  dateTo?: string;
+}
+
+export interface IUserUpdateRequest {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  phone?: string;
+  role?: 'user' | 'admin' | 'moderator';
+  isActive?: boolean;
+  isEmailVerified?: boolean;
+}
+
+export interface IBulkUserOperation {
+  userIds: string[];
+  operation: 'activate' | 'deactivate' | 'delete' | 'updateRole';
+  data?: {
+    role?: 'user' | 'admin' | 'moderator';
+    isActive?: boolean;
+  };
+}
+
+export interface IUserActivity {
+  userId: string;
+  action: string;
+  details?: any;
+  ipAddress?: string;
+  userAgent?: string;
+  timestamp: Date;
+}
+
+export interface IUserStats {
+  totalUsers: number;
+  activeUsers: number;
+  newUsersToday: number;
+  newUsersThisWeek: number;
+  newUsersThisMonth: number;
+  usersByRole: {
+    user: number;
+    admin: number;
+    moderator: number;
+  };
+}
+
 export type UserModel = IUser & IUserMethods;
 
 // DTOs for API responses (without sensitive data)

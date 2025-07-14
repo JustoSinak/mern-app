@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
 import { AppError, asyncHandler } from './errorHandler';
-import { JWTService } from '@/utils/jwt';
-import { User } from '@/models';
-import { AuthenticatedRequest } from '@/types/common';
-import { logger } from '@/utils/logger';
+import { JWTService } from '../utils/jwt';
+import { User } from '../models';
+import { AuthenticatedRequest } from '../types/common';
+import { logger } from '../utils/logger';
 
 // Extend Request interface to include user
 declare global {

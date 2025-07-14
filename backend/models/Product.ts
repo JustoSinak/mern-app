@@ -1,5 +1,5 @@
 import mongoose, { Schema, Model } from 'mongoose';
-import { IProduct, IProductMethods, ProductModel, IProductImage, IProductVariant, IProductReview, IProductSpecification } from '@/types/product';
+import { IProduct, IProductMethods, ProductModel, IProductImage, IProductVariant, IProductReview, IProductSpecification } from '../types/product';
 
 // Product image subdocument schema
 const productImageSchema = new Schema<IProductImage>({

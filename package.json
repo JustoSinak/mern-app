@@ -19,7 +19,7 @@
     "build:frontend": "cd frontend && npm run build",
     "start": "node dist/app.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "nodemon --exec ts-node server.ts",
+    "server": "nodemon --exec ts-node backend/app.ts",
     "client": "cd frontend && npm run dev",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -61,6 +61,9 @@
     "winston": "^3.17.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/compression": "^1.8.1",
     "@types/jest": "^30.0.0",
     "@types/morgan": "^1.9.10",
@@ -71,8 +74,12 @@
     "@types/supertest": "^6.0.3",
     "concurrently": "^9.2.0",
     "jest": "^30.0.4",
+    "jsdom": "^26.1.0",
     "nodemon": "^3.1.9",
     "supertest": "^7.1.3",
-    "ts-jest": "^29.4.0"
+    "ts-jest": "^29.4.0",
+    "vite-plugin-pwa": "^1.0.1",
+    "vitest": "^3.2.4",
+    "workbox-window": "^7.3.0"
   }
 }

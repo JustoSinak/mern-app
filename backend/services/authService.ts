@@ -1,11 +1,11 @@
 import crypto from 'crypto';
-import { User } from '@/models';
-import { JWTService } from '@/utils/jwt';
-import { PasswordService } from '@/utils/password';
+import { User } from '../models';
+import { JWTService } from '../utils/jwt';
+import { PasswordService } from '../utils/password';
 import { EmailService } from './emailService';
-import { AppError } from '@/middleware/errorHandler';
-import { logger } from '@/utils/logger';
-import { IRegisterRequest, ILoginRequest, IUser } from '@/types/user';
+import { AppError } from '../middleware/errorHandler';
+import { logger } from '../utils/logger';
+import { IRegisterRequest, ILoginRequest, IUser } from '../types/user';
 
 export class AuthService {
   /**

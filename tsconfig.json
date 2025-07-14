@@ -25,17 +25,17 @@
     "allowUnreachableCode": false,
     "exactOptionalPropertyTypes": false,
     "moduleResolution": "node",
-    "baseUrl": "backend",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["*"],
-      "@/controllers/*": ["controllers/*"],
-      "@/models/*": ["models/*"],
-      "@/middleware/*": ["middleware/*"],
-      "@/routes/*": ["routes/*"],
-      "@/services/*": ["services/*"],
-      "@/utils/*": ["utils/*"],
-      "@/types/*": ["types/*"],
-      "@/config/*": ["config/*"]
+      "@/*": ["backend/*"],
+      "@/controllers/*": ["backend/controllers/*"],
+      "@/models/*": ["backend/models/*"],
+      "@/middleware/*": ["backend/middleware/*"],
+      "@/routes/*": ["backend/routes/*"],
+      "@/services/*": ["backend/services/*"],
+      "@/utils/*": ["backend/utils/*"],
+      "@/types/*": ["backend/types/*"],
+      "@/config/*": ["backend/config/*"]
     }
   },
   "include": [

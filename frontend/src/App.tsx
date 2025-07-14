@@ -17,6 +17,11 @@ import Profile from './pages/Profile';
 import Orders from './pages/Orders';
 import OrderDetail from './pages/OrderDetail';
 import ProtectedRoute from './components/Auth/ProtectedRoute';
+import AdminRoute from './components/Auth/AdminRoute';
+import AdminLayout from './components/Admin/AdminLayout';
+import AdminDashboard from './pages/Admin/Dashboard';
+import AdminUsers from './pages/Admin/Users';
+import AdminProducts from './pages/Admin/Products';
 import './App.css';
 
 const queryClient = new QueryClient({
@@ -75,6 +80,25 @@ function App() {
                       <ProtectedRoute>
                         <OrderDetail />
                       </ProtectedRoute>
+                    }
+                  />
+
+                  {/* Admin Routes */}
+                  <Route
+                    path="/admin/*"
+                    element={
+                      <AdminRoute>
+                        <AdminLayout>
+                          <Routes>
+                            <Route index element={<AdminDashboard />} />
+                            <Route path="users" element={<AdminUsers />} />
+                            <Route path="products" element={<AdminProducts />} />
+                            <Route path="orders" element={<div>Admin Orders - Coming Soon</div>} />
+                            <Route path="promotions" element={<div>Admin Promotions - Coming Soon</div>} />
+                            <Route path="analytics" element={<div>Admin Analytics - Coming Soon</div>} />
+                          </Routes>
+                        </AdminLayout>
+                      </AdminRoute>
                     }
                   />
                 </Routes>

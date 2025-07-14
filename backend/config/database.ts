@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
-import { logger } from '@/utils/logger';
+import { logger } from '../utils/logger';
+import { initializeAdminSystem } from '../utils/initializeAdmin';
 
 export const connectDB = async (): Promise<void> => {
   try {
@@ -13,6 +14,9 @@ export const connectDB = async (): Promise<void> => {
     });
 
     logger.info(`✅ MongoDB Connected: ${conn.connection.host}`);
+
+    // Initialize admin system (permissions, roles, default settings)
+    await initializeAdminSystem();
 
     // Handle connection events
     mongoose.connection.on('error', (err) => {
